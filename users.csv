@@ -1,0 +1,3 @@
+UserID,email,identityProvider,roles
+nclouse,nclouse@envistacorp.com,https://sts.windows.net/,
+nathan.clouse,nathan.clouse@atomicax.com,https://sts.windows.net/atomicax.com,

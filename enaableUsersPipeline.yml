@@ -1,0 +1,27 @@
+#configure variables as you'd like
+
+variables:
+- name: clientId # clientId for App registration for data automation user, like 002f85e2-58ee-4137-9441-c097b2b35e80
+  value: 002f85e2-58ee-4137-9441-c097b2b35e80 
+- name: clientSecret # client secret for clientId
+  value: abc123 
+- name: resourceURI # URL for F&O Instance with no trailing slash, like https://env-test-0070e080a0dd7c0f9devaos.axcloud.dynamics.com
+  value: https://env-test-0070e080a0dd7c0f9devaos.axcloud.dynamics.com 
+- name: tenantId # tenant ID like envistacorp.com or atomicax.com
+  value: envistacorp.com 
+- name: userFilePath # relative path to input file, like $(Build.SourcesDirectory)\PowerShell\users.csv if this script is in PowerShell directory and user file is users.csv
+  value: users.csv 
+  
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: windows-2019
+  steps:
+  - checkout: self
+  - task: PowerShell@2
+    displayName: PowerShell Script
+    inputs:
+      filePath: PowerShell/enableUsers.ps1
+      arguments: -clientId $(clientId) -tenantID $(tenantid) -clientSecret $(clientSecret) -resourceURI $(resourceURI) -userFilePath $(userFilePath)
+...
