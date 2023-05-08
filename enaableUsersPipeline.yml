@@ -6,9 +6,9 @@ variables:
 - name: clientSecret # client secret for clientId
   value: abc123 
 - name: resourceURI # URL for F&O Instance with no trailing slash, like https://env-test-0070e080a0dd7c0f9devaos.axcloud.dynamics.com
-  value: https://env-test-0070e080a0dd7c0f9devaos.axcloud.dynamics.com 
+  value: https://contoso-test-0070e080a0dd7c0f9devaos.axcloud.dynamics.com 
 - name: tenantId # tenant ID like envistacorp.com or atomicax.com
-  value: envistacorp.com 
+  value: contoso.com 
 - name: userFilePath # relative path to input file, like $(Build.SourcesDirectory)\PowerShell\users.csv if this script is in PowerShell directory and user file is users.csv
   value: users.csv 
   
